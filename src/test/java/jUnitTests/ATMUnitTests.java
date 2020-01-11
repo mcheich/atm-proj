@@ -4,10 +4,12 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import atm.Atm;
+
 public class ATMUnitTests {
 
 	//Arrange
-	Atm underTest = new Atm("1234");
+	Atm underTest = new Atm("1234", 297.00);
 	
 	@Test
 	public void allowAccessTest() {
@@ -32,6 +34,15 @@ public class ATMUnitTests {
 		//Assert
 		assertTrue(297.00 == result);	
 	}
+
+	@Test
+	public void depositTest() {
+		//Act
+		underTest.deposit(3.33);
+		//Assert
+		assertTrue(underTest.getBalance() == 300.33);	
+	}
+	
 	
 	
 

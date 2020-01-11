@@ -1,12 +1,13 @@
-package jUnitTests;
+package atm;
 
 public class Atm {
 	
 	private String requiredPin;
-	private double balance = 297.00;
+	private double balance;
 
-	public Atm(String pin) {
+	public Atm(String pin, double beginBalance) {
 		requiredPin = pin;
+		balance = beginBalance;
 	}
 
 	public boolean allowAcess(String pinEntered) {
@@ -19,8 +20,11 @@ public class Atm {
 	}
 
 	public double getBalance() {
-	
 		return balance;
 	}
 
+	public void deposit(double moneyIn) {
+		balance += moneyIn;
+	}
+	
 }
